@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Trajectory files are release assets; summaries of the final run are tracked
+results/**/*.npz
+!results/final/*_summary.npz
+results/pilot/
+figures/pilot/

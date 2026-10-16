@@ -46,7 +46,7 @@ python figures.py final
 
 `run_all.py final` simulates 16 scenarios x 5 controllers x 2000 trajectories x 80 steps, i.e.
 12,640,000 online QP solves (excluding the initial plans and the offline checks). It takes about
-69 min on the verification machine with 14 worker processes (`os.cpu_count() - 2`).
+68 min on the verification machine with 14 worker processes (`os.cpu_count() - 2`).
 `figures.py final` writes to `figures/final/`:
 
 - `fig_closed_loop.pdf`: Fig. 1 (Student-t, delta = 1),

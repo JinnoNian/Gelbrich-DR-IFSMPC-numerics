@@ -1,0 +1,250 @@
+{
+ "mode": "final",
+ "config_file": "config.json",
+ "config": {
+  "plant": {
+   "g": 9.81,
+   "mass": 1.0,
+   "inertia": 0.02,
+   "Ts": 0.1,
+   "state_scale": [
+    1.0,
+    1.0,
+    0.35,
+    1.0,
+    1.0,
+    2.0
+   ],
+   "input_scale": [
+    4.905,
+    0.2
+   ],
+   "state_lo_phys": [
+    -4.5,
+    -0.6,
+    -0.35,
+    -1.5,
+    -1.5,
+    -2.0
+   ],
+   "state_hi_phys": [
+    1.0,
+    3.0,
+    0.35,
+    1.5,
+    1.5,
+    2.0
+   ],
+   "input_lo_phys": [
+    -4.905,
+    -0.2
+   ],
+   "input_hi_phys": [
+    4.905,
+    0.2
+   ],
+   "noise_std_phys": [
+    0.002,
+    0.002,
+    0.002,
+    0.03,
+    0.03,
+    0.02
+   ],
+   "x0_phys": [
+    -2.5,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "reference_phys": [
+    1.0,
+    -0.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "control": {
+   "Q_diag": [
+    10.0,
+    10.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "R_diag": [
+    1.0,
+    1.0
+   ],
+   "QK_diag": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "RK_diag": [
+    3.0,
+    3.0
+   ],
+   "N": 20
+  },
+  "risk": {
+   "eps": 0.2
+  },
+  "ambiguity": {
+   "rho_w": 0.006,
+   "eta": 0.75,
+   "wind_channels": [
+    3,
+    4
+   ],
+   "wind_direction_rule": "unit d in (v_x, v_z) maximizing (h_wall/|h_wall| + h_floor/|h_floor|)^T (I - A_K)^{-1} d",
+   "reference_radius": "r = delta * rho_w (fixed, independent of controller design radius)",
+   "student_nu": 5,
+   "mix_alpha": 0.85,
+   "mix_direction": "d"
+  },
+  "sim": {
+   "T": 80,
+   "M": 2000,
+   "delta_grid": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+   ],
+   "families": [
+    "gaussian",
+    "student_t",
+    "laplace",
+    "mixture"
+   ],
+   "state_window": "k = 1..T",
+   "input_window": "k = 1..T-1; u(0) deterministic, reported separately",
+   "cost": "J_m = (1/T) sum_{k=0}^{T-1} (xbar-rbar)'Q(xbar-rbar) + ubar'R ubar",
+   "fig1_rule": "student_t, largest in-ball delta in grid (1.0), first 100 trajectories by index"
+  },
+  "solver": {
+   "scheme": "clarabel_v3",
+   "clarabel_tol": 1e-09,
+   "tau_feas": 1e-05
+  },
+  "stats": {
+   "B": 1000,
+   "level": 0.95,
+   "coverage": "per scenario, simultaneous over (controller, row, time); unstudentized max centered deviation",
+   "target_halfwidth": 0.01
+  },
+  "seeds": {
+   "pilot": 20261002,
+   "final": 77031415
+  },
+  "baselines": {
+   "COV": "IF-SMPC with Sigma_w replaced by (1 + rho_w/sqrt(tr Sigma_w))^2 Sigma_w, no mean term (homothetic covariance inflation)",
+   "WAS": "Gaussian-centered type-1 Wasserstein IF baseline: margin = phi(Phi^-1(1-eps))/eps sqrt(h'Sigma_e h) + rho_e ||h||/eps with rho_e from rho_W and the same p-step bound; rho_W closed form so the steady-state wall margin equals DR-MPC's",
+   "ORC": "true-moment tightening oracle per delta: m(t) = h'mu_e(t) + kappa sqrt(h'Sigma_e(t)h), tightening uses the running max from t=0; sets at infinity use max(prefix max over t<orc_T0, bounded tail); oracle information only in the tightening, cost unchanged",
+   "orc_T0": 2000,
+   "scenario_controllers": "DR, IF, COV, WAS, ORC(delta of the scenario)"
+  }
+ },
+ "git_commit": "e9020ef81de8169533012ed604a8fd599bd5c513",
+ "git_dirty": false,
+ "python": "3.11.16 (main, Aug 25 2026, 13:50:51) [Clang 22.1.3 ]",
+ "platform": "macOS-26.6.2-arm64-arm-64bit",
+ "cpu_count": 16,
+ "workers": 14,
+ "packages": [
+  "cffi==2.1.1",
+  "clarabel==0.11.1",
+  "contourpy==1.3.3",
+  "cycler==0.12.1",
+  "fonttools==4.66.1",
+  "kiwisolver==1.5.1",
+  "matplotlib==3.11.2",
+  "numpy==2.4.6",
+  "packaging==26.3",
+  "pillow==12.3.0",
+  "pycparser==3.0",
+  "pyparsing==3.3.3",
+  "python-dateutil==2.9.0.post0",
+  "scipy==1.17.1",
+  "six==1.17.0"
+ ],
+ "env_matches_lock": true,
+ "command": "python run_all.py final",
+ "total_s": 4075.4063727855682,
+ "timing": {
+  "gaussian_d0": {
+   "sim_s": 99.36403703689575,
+   "bootstrap_s": 154.6232409477234
+  },
+  "gaussian_d0.5": {
+   "sim_s": 99.09467005729675,
+   "bootstrap_s": 154.14050602912903
+  },
+  "gaussian_d1": {
+   "sim_s": 98.58886575698853,
+   "bootstrap_s": 151.68180513381958
+  },
+  "gaussian_d1.5": {
+   "sim_s": 98.90031790733337,
+   "bootstrap_s": 154.36856079101562
+  },
+  "student_t_d0": {
+   "sim_s": 99.83075618743896,
+   "bootstrap_s": 151.29588294029236
+  },
+  "student_t_d0.5": {
+   "sim_s": 97.9008538722992,
+   "bootstrap_s": 153.37685418128967
+  },
+  "student_t_d1": {
+   "sim_s": 100.39137816429138,
+   "bootstrap_s": 152.14265489578247
+  },
+  "student_t_d1.5": {
+   "sim_s": 97.64944887161255,
+   "bootstrap_s": 157.9743618965149
+  },
+  "laplace_d0": {
+   "sim_s": 98.22758603096008,
+   "bootstrap_s": 151.0122618675232
+  },
+  "laplace_d0.5": {
+   "sim_s": 96.84323692321777,
+   "bootstrap_s": 154.09211587905884
+  },
+  "laplace_d1": {
+   "sim_s": 98.23010015487671,
+   "bootstrap_s": 150.73628497123718
+  },
+  "laplace_d1.5": {
+   "sim_s": 95.79554581642151,
+   "bootstrap_s": 154.44820976257324
+  },
+  "mixture_d0": {
+   "sim_s": 98.6732931137085,
+   "bootstrap_s": 152.18948316574097
+  },
+  "mixture_d0.5": {
+   "sim_s": 95.76983666419983,
+   "bootstrap_s": 156.52699279785156
+  },
+  "mixture_d1": {
+   "sim_s": 99.85233092308044,
+   "bootstrap_s": 150.60106992721558
+  },
+  "mixture_d1.5": {
+   "sim_s": 97.4605131149292,
+   "bootstrap_s": 158.31317400932312
+  }
+ },
+ "protocol": "same seeds and parameters as the paper; every scenario passed the integrity gate before statistics were computed"
+}

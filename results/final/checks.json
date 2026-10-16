@@ -1,0 +1,342 @@
+{
+ "offline": {
+  "feedback": {
+   "C_norm": 17.715727661177162,
+   "RK_norm": 1.9829391490551984,
+   "C_ratio": 8.934075294049286,
+   "spectral_radius_AK": 0.9004504386267463,
+   "norm_AK": 1.2476394838250247
+  },
+  "DR": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.159637662429459,
+   "rho_lower": 0.15963766242945907,
+   "gap": -3.477321728873799e-16,
+   "nesting": {
+    "max_increase_b": -1.6005738813218429e-06,
+    "max_increase_c": -1.2971409136808276e-06,
+    "max_below_inf_b": -1.4477585877137322e-05,
+    "max_below_inf_c": -1.1732959176780078e-05,
+    "ok": true
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 10,
+    "facets": 53
+   },
+   "terminal_verify": {
+    "invariance_excess": 1.3322676295501878e-15,
+    "inclusion_excess": 1.2212453270876722e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 487,
+   "qp_variables": 166
+  },
+  "IF": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": -2.028377465990161e-13,
+    "max_increase_c": -6.439293542825908e-15,
+    "max_below_inf_b": -8.693046282814976e-13,
+    "max_below_inf_c": -2.7533531010703882e-14,
+    "ok": true
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 58
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.220446049250313e-15,
+    "inclusion_excess": 1.9984014443252818e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 492,
+   "qp_variables": 166
+  },
+  "COV": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": -2.304822999121825e-13,
+    "max_increase_c": -7.327471962526033e-15,
+    "max_below_inf_b": -9.876544027065393e-13,
+    "max_below_inf_c": -3.141931159689193e-14,
+    "ok": true
+   },
+   "variance_factor": 1.2909505768121161,
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 58
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.4424906541753444e-15,
+    "inclusion_excess": 1.9984014443252818e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 492,
+   "qp_variables": 166
+  },
+  "WAS": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.07714575114255148,
+   "rho_lower": 0.0771457511425515,
+   "gap": -1.7989050080244599e-16,
+   "nesting": {
+    "max_increase_b": -1.729566881603084e-06,
+    "max_increase_c": -1.4016796848759228e-06,
+    "max_below_inf_b": -1.5644359774635852e-05,
+    "max_below_inf_c": -1.2678538646393456e-05,
+    "ok": true
+   },
+   "rho_W": 0.0028995319764209444,
+   "terminal": {
+    "status": "converged",
+    "iterations": 10,
+    "facets": 53
+   },
+   "terminal_verify": {
+    "invariance_excess": 1.5543122344752192e-15,
+    "inclusion_excess": 1.2212453270876722e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 487,
+   "qp_variables": 166
+  },
+  "ORC_d0": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": -2.028377465990161e-13,
+    "max_increase_c": -6.439293542825908e-15,
+    "max_below_inf_b": -8.693046282814976e-13,
+    "max_below_inf_c": -2.7644553313166398e-14,
+    "ok": true
+   },
+   "x": {
+    "transient_excess_max": 4.163336342344337e-17,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "u": {
+    "transient_excess_max": 3.469446951953614e-17,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 58
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.220446049250313e-15,
+    "inclusion_excess": 1.9984014443252818e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 492,
+   "qp_variables": 166
+  },
+  "ORC_d0.5": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": 0.0,
+    "max_increase_c": 0.0,
+    "max_below_inf_b": 0.0,
+    "max_below_inf_c": 0.0,
+    "ok": true
+   },
+   "x": {
+    "transient_excess_max": 0.0018556996373795542,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "u": {
+    "transient_excess_max": 0.00024320792012330616,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 58
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.220446049250313e-15,
+    "inclusion_excess": 1.9984014443252818e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 492,
+   "qp_variables": 166
+  },
+  "ORC_d1": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": 0.0,
+    "max_increase_c": 0.0,
+    "max_below_inf_b": 0.0,
+    "max_below_inf_c": 0.0,
+    "ok": true
+   },
+   "x": {
+    "transient_excess_max": 0.007459517536451549,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "u": {
+    "transient_excess_max": 0.001047769205093918,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 59
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.4424906541753444e-15,
+    "inclusion_excess": 1.887379141862766e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 493,
+   "qp_variables": 166
+  },
+  "ORC_d1.5": {
+   "origin_in_sets_at_infinity": true,
+   "p": 371,
+   "gamma_p": 5.435618780251033e-17,
+   "rho_bar_inf": 0.0,
+   "rho_lower": 0.0,
+   "gap": 0.0,
+   "nesting": {
+    "max_increase_b": 0.0,
+    "max_increase_c": 0.0,
+    "max_below_inf_b": 0.0,
+    "max_below_inf_c": 0.0,
+    "ok": true
+   },
+   "x": {
+    "transient_excess_max": 0.018075913739511562,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "u": {
+    "transient_excess_max": 0.0018523304900644744,
+    "raw_min": 0.0,
+    "tail_sum_bound": 1.2624932411858459e-80
+   },
+   "terminal": {
+    "status": "converged",
+    "iterations": 12,
+    "facets": 59
+   },
+   "terminal_verify": {
+    "invariance_excess": 2.4424906541753444e-15,
+    "inclusion_excess": 1.7763568394002505e-15,
+    "origin_interior": true,
+    "ok": true
+   },
+   "qp_constraints": 493,
+   "qp_variables": 166
+  }
+ },
+ "initial_plan_source": {
+  "DR": "clarabel",
+  "IF": "clarabel",
+  "COV": "clarabel",
+  "WAS": "clarabel",
+  "ORC_d0": "clarabel",
+  "ORC_d0.5": "clarabel",
+  "ORC_d1": "clarabel",
+  "ORC_d1.5": "clarabel"
+ },
+ "initial_feasible": {
+  "DR": true,
+  "IF": true,
+  "COV": true,
+  "WAS": true,
+  "ORC_d0": true,
+  "ORC_d0.5": true,
+  "ORC_d1": true,
+  "ORC_d1.5": true
+ },
+ "initial_plan_violation": {
+  "DR": 8.846257060213247e-12,
+  "IF": 1.2301271112846734e-13,
+  "COV": 5.292877247597971e-12,
+  "WAS": 7.158718062783009e-13,
+  "ORC_d0": 1.2279066652354231e-13,
+  "ORC_d0.5": 5.959899240792765e-12,
+  "ORC_d1": 7.864819906444609e-12,
+  "ORC_d1.5": 8.265388373729365e-12
+ },
+ "v0_sensitivity": [
+  2.063016424358466e-12,
+  0.0008810981319880423,
+  0.048061092102443054
+ ],
+ "wind_direction": [
+  0.0,
+  0.0,
+  0.0,
+  0.9108949825384219,
+  -0.41263825657145276,
+  0.0
+ ],
+ "moments": {
+  "gaussian": {
+   "max_abs_mean": 0.003939524679459023,
+   "max_abs_cov_minus_I": 0.004870764423330232
+  },
+  "student_t": {
+   "max_abs_mean": 0.002714507152898319,
+   "max_abs_cov_minus_I": 0.013732444923848952
+  },
+  "laplace": {
+   "max_abs_mean": 0.0016894242241492841,
+   "max_abs_cov_minus_I": 0.006414376920714995
+  },
+  "mixture": {
+   "max_abs_mean": 0.0019200060745842888,
+   "max_abs_cov_minus_I": 0.004331458196493257
+  }
+ },
+ "zero_radius": {
+  "same_tightening": true,
+  "max_state_diff": 0.0
+ }
+}

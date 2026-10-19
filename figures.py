@@ -143,9 +143,8 @@ def fig_closed_loop(mode, out):
     # (c) per-time empirical CVaR of the wall row
     ax = fig.add_subplot(gs[2])
     tt = np.arange(1, T + 1) * Ts
-    th, lo, hi = summ["state_theta"], summ["state_pw_lo"], summ["state_pw_hi"]
+    th = summ["state_theta"]
     for ci, c in enumerate(("DR", "IF")):
-        ax.fill_between(tt, lo[ci, :, 0], hi[ci, :, 0], color=COL[c], alpha=0.25, lw=0)
         ax.plot(tt, th[ci, :, 0], color=COL[c], lw=1.0)
     ax.axhline(0, color="k", lw=0.6)
     ax.set_xlim(0, T * Ts)
@@ -155,14 +154,12 @@ def fig_closed_loop(mode, out):
     ax.set_title("(c)", loc="left")
 
     from matplotlib.lines import Line2D
-    from matplotlib.patches import Patch
     handles = [Line2D([], [], color=COL["DR"], lw=1.3, label=LAB["DR"]),
                Line2D([], [], color=COL["IF"], lw=1.3, label=LAB["IF"]),
                Line2D([], [], color="0.3", lw=1.1, label="actual state"),
                Line2D([], [], color="0.3", ls=":", lw=1.0, label="nominal state"),
-               Line2D([], [], color="0.3", ls="--", lw=0.8, label="tightened bound"),
-               Patch(color="0.6", alpha=0.4, lw=0, label="(c) 95% interval")]
-    fig.legend(handles=handles, loc="upper center", ncol=6, bbox_to_anchor=(0.53, 1.0),
+               Line2D([], [], color="0.3", ls="--", lw=0.8, label="tightened bound")]
+    fig.legend(handles=handles, loc="upper center", ncol=5, bbox_to_anchor=(0.53, 1.0),
                handlelength=1.8, columnspacing=1.1)
     fig.savefig(out / "fig_closed_loop.pdf")
     plt.close(fig)
